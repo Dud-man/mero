@@ -146,7 +146,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256("a74181dfedb5fde7369e2422f09e3e35dfe4f8878351a9d254655e1c6e0cbb2b"));
 
         vSeeds.push_back(CDNSSeedData("dnsseed.meroexplorer.com", "45.220.58.41"));
-        vSeeds.push_back(CDNSSeedData("194.67.200.44", "208.69.150.9"));
+        vSeeds.push_back(CDNSSeedData("meroseeder.ddns.net", "45.220.58.42"));
         vSeeds.push_back(CDNSSeedData("80.211.133.202", "178.128.67.208"));
         vSeeds.push_back(CDNSSeedData("207.148.83.37", "80.211.92.251"));
 
