@@ -1679,11 +1679,9 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
             return 0;
     }
 
-    if (nHeight < 1000) {
-        ret = blockValue * 0.75;
-    }
-	  else {
-		ret = blockValue * 0.65;         //65%
+    if (nHeight >= 789000) {
+        ret = blockValue * 0.65;		//65%
+    
 	}
 	 
 	return ret;
@@ -3109,7 +3107,7 @@ bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, bool f
 
                 CAmount blockValue = GetBlockValue(nBlockHeight);
                 CAmount devfee = 0;
-                if(nBlockHeight >= 590000){
+                if(nBlockHeight >= 789000){
                    devfee = blockValue * 0.15; //15%
                 }
                 else{
@@ -5556,6 +5554,11 @@ int ActiveProtocol()
             return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
     return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
+if (chainActive.Tip()->nHeight >= 789000) {
+      return 70812;
+    }
+
+    return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 }
 
 // requires LOCK(cs_vRecvMsg)
