@@ -113,8 +113,13 @@ public:
         nMaturity = 40;
         nMasternodeCountDrift = 20;
         nMasternodeCollateralLimit = 5000;
-        nModifierUpdateBlock = 615800;
+        nModifierUpdateBlock = 130;
         nMaxMoneyOut = 21000000 * COIN;
+		nNewMasternodeCollateral_StartBlock = 789000; // Nov 7, 2018 (approximately)
+	    nNewMasternodeCollateral_GPBlock = 799000; // 1 week grace period to allow for masternodes to activate using the new collateral
+        nNewMasternode_Collateral = 5000;
+        nOriginalMasternode_Collateral = 1000;
+        nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -188,7 +193,7 @@ static CMainParams mainParams;
 
 std::string CChainParams::GetDevFeeRewardAddress()
 {
-	return "mU4PjRtjwFMjQZ1MP9XHEhESugcmrhQuMj";
+	return "mbnU1Kf9sb4jZDZTR4P5iE9xg3641D1fzo";
 }
 
 CScript CChainParams::GetScriptForDevFeeDestination() {
